@@ -20,7 +20,7 @@ class LocationWidget(widgets.TextInput):
     def render(self, name, value, attrs=None):
         if value is not None:
             try:
-                if isinstance(value, basestring):
+                if isinstance(value, str):
                     lat, lng = value.split(',')
                 else:
                     lng = value.x
