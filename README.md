@@ -13,8 +13,8 @@ MIT licensed
 
 **Compatibility**
 
-* Django 1.3, 1.4 and 1.5
-* Python 2.6, 2.7 and 3.x
+* Django 1.6 and 1.7
+* Python 2.7 and 3.x
 
 It was only tested with PostGIS but may work with other Spatial Databases.
 
@@ -22,7 +22,7 @@ It was only tested with PostGIS but may work with other Spatial Databases.
 
 1. Install through pip (or manually place it on your `PYTHON_PATH`).
 
-    `pip install django-location-field`
+    `pip install django-location-field==1.5.1`
 
 2. Create a Spatial Database
 
@@ -38,7 +38,7 @@ See the [example postgis](example_postgis/) and [example sqlite](example_sqlite/
 
     from django.contrib.gis.db import models
     from django.contrib.gis.geos import Point
-    from location_field.models import LocationField
+    from location_field.models.spatial import LocationField
 
     class Place(models.Model):
         city = models.CharField(max_length=255)
@@ -50,7 +50,7 @@ Look that you must put `models.GeoManager()` in your model, or some errors will 
 **Basic usage (without Spatial Database)**
 
     from django.db import models
-    from location_field.models import PlainLocationField
+    from location_field.models.plain import PlainLocationField
 
     class Place(models.Model):
         city = models.CharField(max_length=255)
@@ -58,4 +58,4 @@ Look that you must put `models.GeoManager()` in your model, or some errors will 
 
 **Screenshot**
 
-![Screenshot](http://img153.imageshack.us/img153/1914/screenshot20101005at161.png)
+![Screenshot](https://github.com/caioariede/django-location-field/raw/master/screenshot.png)
